@@ -30,6 +30,7 @@ export default function Signup() {
     const responseData = await response.json();
     
     if(!response.ok) {
+      alert("Sorry a user with this email already exists");
       console.log('could not register')
       return ;
     }
@@ -127,7 +128,7 @@ export default function Signup() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/login" variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>

@@ -15,10 +15,9 @@ const router = express.Router()
 
 // ****************  CREATE NEW USER **********************************************
 router.post('/register', async (req, res) => {
-
     try {
 
-        let user = await User.findOne({ email: req.body.email})
+        let user = await User.findOne({ email: req.body.email})        
         // return error if user already exists with the same email
         if (user) {
             return res.status(400).json({ error: "Sorry a user with this email already exists" })

@@ -24,8 +24,8 @@ passportConfig(passport);
 app.use('/auth', authRoutes)
 app.use('/transaction', transactionRoutes)
 
-const uri = "your mongodb url ...";
 
+const uri = process.env.MONGODB_URL;
 
 const connectDB = async () => {
   try {

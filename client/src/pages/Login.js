@@ -30,6 +30,7 @@ export default function Login() {
       const responseData = await response.json();
       
       if(!response.ok) {
+        alert("Not able to login, Please Enter valid Credentials");
         console.log('could not login')
         return ;
       }
@@ -101,14 +102,9 @@ export default function Login() {
               Sign In
             </Button>
             <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                <Link href="/" variant="body2">
+                  Don't have an account? Sign Up
                 </Link>
               </Grid>
             </Grid>
