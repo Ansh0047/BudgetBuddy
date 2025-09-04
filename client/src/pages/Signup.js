@@ -3,7 +3,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
+import {Link} from "react-router-dom"
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -126,13 +126,16 @@ export default function Signup() {
             >
               Sign Up
             </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link href="/login" variant="body2">
-                  Already have an account? Sign in
-                </Link>
+              <Grid container justifyContent="flex-end">
+                <Grid item>
+                  <Typography variant="body2" component="span" sx={{ mr: 1 }}>
+                    Already have an account?
+                  </Typography>
+                  <Link to="/login" style={{ textDecoration: "none" }}>
+                    Sign in
+                  </Link>
+                </Grid>
               </Grid>
-            </Grid>
           </Box>
         </Box>
       </Container>

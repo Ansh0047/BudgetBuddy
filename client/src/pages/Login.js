@@ -3,7 +3,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -13,6 +12,7 @@ import {useDispatch } from 'react-redux'
 import {useNavigate} from 'react-router-dom';
 import { authActions } from '../store/authSlice';
 import Cookies from 'js-cookie';
+import {Link} from "react-router-dom"
 
 export default function Login() {
   const navigate = useNavigate()
@@ -101,10 +101,13 @@ export default function Login() {
             >
               Sign In
             </Button>
-            <Grid container>
+            <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="/" variant="body2">
-                  Don't have an account? Sign Up
+                <Typography variant="body2" component="span" sx={{ mr: 1 }}>
+                    Don't have an account?
+                  </Typography>
+                <Link to="/signup" style={{ textDecoration: "none" }}>
+                  Sign Up
                 </Link>
               </Grid>
             </Grid>
