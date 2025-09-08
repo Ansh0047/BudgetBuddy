@@ -15,8 +15,7 @@ function App() {
   const dispatch = useDispatch();
   const token = Cookies.get("auth-token");
 
-  useEffect(() => {
-    const getUserDetails = async () => {
+  const getUserDetails = async () => {
       try {
         const response = await fetch(
           `${process.env.REACT_APP_API_URL}/auth/getuser`,
@@ -43,13 +42,15 @@ function App() {
       }
     };
 
+  useEffect(() => {
+    
     if (!token) {
       navigate("/login");
       return;
     }
 
     getUserDetails();
-  }, [token, navigate, dispatch]);
+  }, [token]);
 
   return (
     <>
